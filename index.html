@@ -71,7 +71,7 @@ input[type=number]{-moz-appearance:textfield;}
   overflow:hidden;
   --bleed-l:max(16px,env(safe-area-inset-left,0px));
   --bleed-r:max(16px,env(safe-area-inset-right,0px));
-  --safe-top:max(env(safe-area-inset-top,0px),20px);
+  --safe-top:max(env(safe-area-inset-top,0px),44px);
   --safe-bot:env(safe-area-inset-bottom,0px);
 }
 #app::before{
@@ -667,8 +667,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 .m-actions{display:flex;gap:8px;margin-top:4px;}
 .m-actions button{flex:1;padding:15px 12px;min-height:52px;border-radius:var(--r-s);
   font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;border:none;}
-.btn-cancel{background:var(--surface2);color:var(--fg2);}
-.btn-ok{background:var(--accent);color:#fff;}
+.btn-cancel{background:var(--surface2);color:var(--fg2);padding:14px 12px;min-height:52px;border-radius:var(--r-s);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;border:none;}
+.btn-ok{background:var(--accent);color:#fff;padding:14px 12px;min-height:52px;border-radius:var(--r-s);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;border:none;}
 /* ── Passcode ── */
 #pc-screen{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:0 32px 40px;}
 .pc-logo{font-size:48px;margin-bottom:8px;}
@@ -1034,15 +1034,15 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
       <label>アクセス制限</label>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
         <div id="pc-status" style="font-size:13px;color:var(--fg2);padding:4px 0;"></div>
-        <button id="btn-pc-set" class="btn-cancel" style="width:100%;padding:12px;font-size:.95rem;">🔑 パスコードを設定する</button>
-        <button id="btn-pc-clear" class="btn-cancel" style="width:100%;padding:12px;font-size:.95rem;display:none;">🔓 パスコードを解除する</button>
+        <button id="btn-pc-set" class="btn-cancel" style="width:100%;">🔑 パスコードを設定する</button>
+        <button id="btn-pc-clear" class="btn-cancel" style="width:100%;display:none;">🔓 パスコードを解除する</button>
       </div>
     </div>
     <div class="m-field" style="margin-top:16px;">
       <label>データ管理</label>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
-        <button id="btn-export" class="btn-cancel" style="width:100%;padding:12px;font-size:.95rem;">📤 データをエクスポート（バックアップ）</button>
-        <label id="btn-import-lbl" class="btn-cancel" style="width:100%;padding:12px;font-size:.95rem;text-align:center;cursor:pointer;box-sizing:border-box;">
+        <button id="btn-export" class="btn-cancel" style="width:100%;">📤 データをエクスポート（バックアップ）</button>
+        <label id="btn-import-lbl" class="btn-cancel" style="width:100%;padding:14px 12px;font-size:15px;font-weight:700;text-align:center;cursor:pointer;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:var(--r-s);min-height:52px;">
           📥 データをインポート（復元）
           <input type="file" id="import-file" accept=".json" style="display:none;">
         </label>
