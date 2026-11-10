@@ -119,9 +119,9 @@ input[type=number]{-moz-appearance:textfield;}
 .fab-float.pos-br{right:max(16px,env(safe-area-inset-right,0px));}
 .fab-float.pos-bl{left:max(16px,env(safe-area-inset-left,0px));}
 .fab-float:active{transform:scale(.93);}
-.hdr-settings-btn{background:none;border:none;color:var(--fg2);cursor:pointer;padding:6px;font-size:17px;line-height:1;border-radius:8px;}
+.hdr-settings-btn{background:none;border:none;color:var(--fg2);cursor:pointer;padding:10px;font-size:17px;line-height:1;border-radius:8px;}
 .hdr-settings-btn:hover{background:var(--surface2);}
-.prof-btn{background:none;border:none;cursor:pointer;padding:3px;display:flex;align-items:center;}
+.prof-btn{background:none;border:none;cursor:pointer;padding:7px;display:flex;align-items:center;}
 .prof-avatar{width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
 .prof-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);cursor:pointer;border-radius:6px;}
 .prof-row:last-child{border:none;}
@@ -130,7 +130,7 @@ input[type=number]{-moz-appearance:textfield;}
 .prof-check{color:var(--accent);font-weight:700;font-size:16px;}
 .prof-avatar-lg{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;flex-shrink:0;}
 .new-prof-form{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);}
-.new-prof-toggle{width:100%;background:var(--surface2);border:1.5px dashed var(--border);border-radius:var(--r-s);padding:9px;font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;}
+.new-prof-toggle{width:100%;background:var(--surface2);border:1.5px dashed var(--border);border-radius:var(--r-s);padding:13px;font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;}
 .pos-opt-row{display:flex;gap:8px;margin-top:8px;}
 .pos-opt{flex:1;background:var(--surface2);border:2px solid transparent;border-radius:var(--r-s);padding:12px 6px;font-size:12px;font-family:inherit;cursor:pointer;color:var(--fg2);text-align:center;line-height:1.5;font-weight:500;transition:all .15s;}
 .pos-opt.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-fg);font-weight:700;}
@@ -155,13 +155,13 @@ input[type=number]{-moz-appearance:textfield;}
 .empty-icon{font-size:34px;margin-bottom:8px;}
 .empty p{font-size:13px;}
 .del-btn{background:none;border:none;color:var(--fg3);font-size:17px;
-  cursor:pointer;padding:4px 6px;line-height:1;border-radius:4px;}
+  cursor:pointer;padding:8px 10px;line-height:1;border-radius:4px;}
 .del-btn:hover{color:var(--err);background:rgba(239,68,68,.08);}
 .edit-item-btn{background:none;border:none;color:var(--fg3);font-size:14px;
-  cursor:pointer;padding:4px 5px;line-height:1;border-radius:4px;}
+  cursor:pointer;padding:8px 10px;line-height:1;border-radius:4px;}
 .edit-item-btn:hover{color:var(--accent);background:rgba(99,102,241,.1);}
 .ex-rename{background:none;border:none;color:var(--fg3);font-size:13px;
-  cursor:pointer;padding:0 4px;line-height:1;flex-shrink:0;}
+  cursor:pointer;padding:6px 8px;line-height:1;flex-shrink:0;}
 .ex-rename:hover{color:var(--accent);}
 .ex-name-inp{flex:1;background:var(--surface2);border:1.5px solid var(--accent);
   border-radius:var(--r-s);padding:3px 8px;font-size:14px;font-weight:700;
@@ -175,18 +175,18 @@ input[type=number]{-moz-appearance:textfield;}
 .add-row input:focus{border-color:var(--accent);}
 .add-row button{
   background:var(--accent);color:#fff;border:none;
-  border-radius:var(--r-s);padding:9px 15px;
+  border-radius:var(--r-s);padding:12px 15px;
   font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;
 }
 .ex-in-wrap{flex:1;min-width:0;position:relative;}
 .ex-in-wrap input{width:100%;box-sizing:border-box;}
-#ex-sug-list{position:absolute;top:calc(100% + 2px);left:0;right:0;background:var(--surface);border:1.5px solid var(--accent);border-radius:var(--r-s);z-index:50;max-height:200px;overflow-y:auto;display:none;box-shadow:0 4px 12px rgba(0,0,0,.12);}
+#ex-sug-list{position:fixed;background:var(--surface);border:1.5px solid var(--accent);border-radius:var(--r-s);z-index:1000;max-height:200px;overflow-y:auto;display:none;box-shadow:0 4px 12px rgba(0,0,0,.12);}
 #ex-sug-list.show{display:block;}
 .ex-sug-item{padding:10px 13px;font-size:14px;cursor:pointer;border-bottom:1px solid var(--border);color:var(--fg);}
 .ex-sug-item:last-child{border-bottom:none;}
 .ex-sug-item:active{background:var(--accent-bg);}
 .ex-sug-recent-lbl{padding:5px 13px 2px;font-size:10px;font-weight:600;color:var(--fg3);text-transform:uppercase;letter-spacing:.04em;}
-#ev-sug-list{position:absolute;top:calc(100% + 2px);left:0;right:0;background:var(--surface);border:1.5px solid var(--accent);border-radius:var(--r-s);z-index:200;max-height:200px;overflow-y:auto;display:none;box-shadow:0 4px 12px rgba(0,0,0,.12);}
+#ev-sug-list{position:fixed;background:var(--surface);border:1.5px solid var(--accent);border-radius:var(--r-s);z-index:1000;max-height:200px;overflow-y:auto;display:none;box-shadow:0 4px 12px rgba(0,0,0,.12);}
 #ev-sug-list.show{display:block;}
 .ev-sug-item{padding:10px 13px;font-size:14px;cursor:pointer;border-bottom:1px solid var(--border);color:var(--fg);}
 .ev-sug-item:last-child{border-bottom:none;}
@@ -197,17 +197,17 @@ input[type=number]{-moz-appearance:textfield;}
 .month-nav h2{font-size:15px;font-weight:700;}
 .arrow-btn{
   background:var(--surface2);border:none;border-radius:var(--r-s);
-  width:34px;height:34px;font-size:18px;cursor:pointer;
+  width:40px;height:40px;font-size:18px;cursor:pointer;
   color:var(--fg2);display:flex;align-items:center;justify-content:center;
 }
 .cal-filter-row{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0 10px;}
-.cal-filter-btn{display:inline-flex;align-items:center;gap:5px;background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:5px 11px;font-size:12px;font-family:inherit;color:var(--fg);cursor:pointer;font-weight:500;transition:opacity .15s,border-color .15s;}
+.cal-filter-btn{display:inline-flex;align-items:center;gap:5px;background:var(--surface);border:1.5px solid var(--border);border-radius:20px;padding:9px 14px;font-size:12px;font-family:inherit;color:var(--fg);cursor:pointer;font-weight:500;transition:opacity .15s,border-color .15s;}
 .cal-filter-btn.off{opacity:0.38;}
 .cal-filter-btn:hover{border-color:var(--accent);}
 .cal-filter-settings{padding:5px 9px !important;font-size:13px;color:var(--fg2);}
 .cal-dot-sm{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
 .ev-cal-badge{font-size:10px;border-radius:3px;padding:1px 6px;font-weight:600;color:#fff;white-space:nowrap;flex-shrink:0;}
-.cal-sel-btn{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1.5px solid transparent;border-radius:20px;padding:5px 12px;font-size:13px;font-family:inherit;cursor:pointer;font-weight:500;color:var(--fg2);transition:all .15s;}
+.cal-sel-btn{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border:1.5px solid transparent;border-radius:20px;padding:9px 14px;font-size:13px;font-family:inherit;cursor:pointer;font-weight:500;color:var(--fg2);transition:all .15s;}
 .cal-sel-btn.on{border-color:var(--accent);background:var(--accent-bg);color:var(--accent-fg);}
 .cal-def-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);}
 .cal-def-row:last-child{border:none;}
@@ -250,25 +250,25 @@ input[type=number]{-moz-appearance:textfield;}
 /* Tasks */
 .filter-row{display:flex;gap:6px;margin-bottom:8px;}
 .fbtn{background:var(--surface2);border:none;border-radius:20px;
-  padding:5px 12px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;}
+  padding:9px 14px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;}
 .fbtn.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:600;}
 .sbtn{background:var(--surface2);border:none;border-radius:20px;
-  padding:4px 10px;font-size:11px;font-family:inherit;color:var(--fg2);cursor:pointer;}
+  padding:8px 12px;font-size:11px;font-family:inherit;color:var(--fg2);cursor:pointer;}
 .sbtn.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:600;}
 .sort-row{display:flex;align-items:center;gap:5px;margin-bottom:12px;}
 .sort-row-lbl{font-size:11px;color:var(--fg3);}
 .tk-sep{font-size:11px;font-weight:600;color:var(--fg3);padding:10px 2px 4px;border-top:1px solid var(--border);margin-top:4px;}
 .tk-completed-at{font-size:11px;color:var(--fg3);margin-top:2px;}
 .goal-tasks-hdr{display:flex;align-items:center;gap:5px;margin-bottom:5px;}
-.goal-sort-btn{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2px 8px;font-size:10px;font-family:inherit;color:var(--fg2);cursor:pointer;}
+.goal-sort-btn{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:7px 12px;font-size:11px;font-family:inherit;color:var(--fg2);cursor:pointer;}
 .goal-sort-btn.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-fg);font-weight:600;}
 .goal-task-completed-at{font-size:10px;color:var(--fg3);margin-left:auto;}
 .tk-item{display:flex;align-items:center;gap:10px;padding:11px 14px;margin-bottom:7px;}
 .tk-item.done .tk-title{text-decoration:line-through;color:var(--fg3);}
 .check-btn{
-  width:21px;height:21px;border-radius:50%;border:2px solid var(--border);background:none;
+  width:28px;height:28px;border-radius:50%;border:2px solid var(--border);background:none;
   flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:11px;color:transparent;transition:all .15s;
+  font-size:14px;color:transparent;transition:all .15s;
 }
 .check-btn.on{background:var(--ok);border-color:var(--ok);color:#fff;}
 .tk-info{flex:1;min-width:0;}
@@ -284,13 +284,13 @@ input[type=number]{-moz-appearance:textfield;}
   padding:10px 14px;margin-bottom:14px;}
 .date-bar span{font-size:15px;font-weight:700;}
 .date-bar button{background:none;border:none;font-size:20px;cursor:pointer;
-  color:var(--fg2);padding:4px 8px;}
+  color:var(--fg2);padding:10px 12px;}
 .ex-card{margin-bottom:10px;}
 .ex-head{display:flex;align-items:center;gap:4px;justify-content:space-between;padding:12px 14px 10px;}
 .ex-name{font-size:15px;font-weight:700;flex:1;min-width:0;}
 .ex-acts{display:flex;gap:5px;}
 .ex-acts button{background:var(--surface2);border:none;border-radius:var(--r-s);
-  padding:4px 10px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;}
+  padding:9px 12px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;}
 .ex-acts .del-ex{color:var(--err);}
 .set-tbl{width:100%;border-collapse:collapse;font-size:13px;
   font-variant-numeric:tabular-nums;padding:0 14px 12px;display:block;}
@@ -306,7 +306,7 @@ input[type=number]{-moz-appearance:textfield;}
 /* Chart */
 .wo-view-tabs{display:flex;gap:6px;margin-bottom:14px;}
 .wo-vtab{flex:1;background:var(--surface2);border:none;border-radius:var(--r-s);
-  padding:9px;font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
+  padding:12px;font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
 .wo-vtab.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:700;}
 .chart-ctrl{padding:12px 14px;margin-bottom:12px;}
 #chart-ex-sel{width:100%;background:var(--surface2);border:1.5px solid var(--border);
@@ -315,15 +315,15 @@ input[type=number]{-moz-appearance:textfield;}
 #chart-ex-sel:focus{border-color:var(--accent);}
 .period-row{display:flex;gap:6px;}
 .period-btn{flex:1;background:var(--surface2);border:none;border-radius:var(--r-s);
-  padding:7px 4px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
+  padding:11px 4px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
 .period-btn.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:700;}
-.chart-type-btn{flex:1;background:var(--surface2);border:none;border-radius:var(--r-s);padding:7px 4px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
+.chart-type-btn{flex:1;background:var(--surface2);border:none;border-radius:var(--r-s);padding:11px 4px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
 .chart-type-btn.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:700;}
 .ml-vtab{flex:1;background:var(--surface2);border:none;border-radius:var(--r-s);
-  padding:9px;font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
+  padding:12px;font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
 .ml-vtab.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:700;}
 .ml-period-btn{flex:1;background:var(--surface2);border:none;border-radius:var(--r-s);
-  padding:7px 4px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
+  padding:11px 4px;font-size:12px;font-family:inherit;color:var(--fg2);cursor:pointer;font-weight:500;}
 .ml-period-btn.on{background:var(--accent-bg);color:var(--accent-fg);font-weight:700;}
 #ml-chart-nut-sel{width:100%;background:var(--surface2);border:1.5px solid var(--border);
   border-radius:var(--r-s);padding:9px 12px;font-size:14px;font-family:inherit;
@@ -342,7 +342,7 @@ input[type=number]{-moz-appearance:textfield;}
 .health-unit{font-size:12px;color:var(--fg2);white-space:nowrap;}
 /* Training category */
 .wo-cat-row{display:flex;gap:6px;flex-wrap:wrap;}
-.wo-cat-btn{flex:1;min-width:0;padding:7px 4px;font-size:11px;font-family:inherit;border:1.5px solid var(--border);border-radius:var(--r-s);background:var(--surface2);color:var(--fg2);cursor:pointer;white-space:nowrap;font-weight:500;}
+.wo-cat-btn{flex:1;min-width:0;padding:11px 4px;font-size:11px;font-family:inherit;border:1.5px solid var(--border);border-radius:var(--r-s);background:var(--surface2);color:var(--fg2);cursor:pointer;white-space:nowrap;font-weight:500;}
 .wo-cat-btn.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-fg);font-weight:700;}
 .ex-cat-badge{font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600;margin-right:6px;background:var(--surface2);color:var(--fg2);}
 .ex-cat-badge.weight{background:#EEF2FF;color:#4F46E5;}
@@ -350,9 +350,9 @@ input[type=number]{-moz-appearance:textfield;}
 .ex-cat-badge.cardio{background:#FEF3C7;color:#D97706;}
 .ex-cat-badge.stretch{background:#FDF4FF;color:#9333EA;}
 /* Timer */
-.wo-timer-fab{display:block;width:100%;margin:8px 0 2px;padding:10px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-s);font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;text-align:center;font-weight:600;}
+.wo-timer-fab{display:block;width:100%;margin:8px 0 2px;padding:13px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-s);font-size:13px;font-family:inherit;color:var(--fg2);cursor:pointer;text-align:center;font-weight:600;}
 .wo-timer-fab:active{background:var(--surface2);}
-.tmr-type-btn{flex:1;padding:8px 4px;font-size:12px;font-family:inherit;border:1.5px solid var(--border);border-radius:var(--r-s);background:var(--surface2);color:var(--fg2);cursor:pointer;font-weight:500;}
+.tmr-type-btn{flex:1;padding:12px 4px;font-size:12px;font-family:inherit;border:1.5px solid var(--border);border-radius:var(--r-s);background:var(--surface2);color:var(--fg2);cursor:pointer;font-weight:500;}
 .tmr-type-btn.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-fg);font-weight:700;}
 .tmr-display{font-size:56px;font-weight:700;text-align:center;letter-spacing:2px;color:var(--fg);font-variant-numeric:tabular-nums;padding:16px 0 8px;}
 .tmr-progress-bar{height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;}
@@ -363,7 +363,7 @@ input[type=number]{-moz-appearance:textfield;}
 .cardio-tbl td{padding:3px 2px;text-align:center;}
 .cardio-in{width:52px;background:var(--surface2);border:1.5px solid transparent;border-radius:6px;padding:4px 2px;text-align:center;font-size:12px;font-family:inherit;color:var(--fg);}
 .cardio-in:focus{outline:none;border-color:var(--accent);background:var(--surface);}
-.health-chart-toggle{width:100%;margin-top:8px;padding:8px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-s);font-size:13px;color:var(--fg2);cursor:pointer;text-align:center;}
+.health-chart-toggle{width:100%;margin-top:8px;padding:13px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-s);font-size:13px;color:var(--fg2);cursor:pointer;text-align:center;}
 .health-chart-toggle:active{opacity:.7;}
 .hlt-chart-block{padding:12px 0 4px;}
 .hlt-chart-title{font-size:12px;font-weight:700;color:var(--fg2);margin-bottom:4px;display:flex;justify-content:space-between;align-items:baseline;}
@@ -379,7 +379,19 @@ input[type=number]{-moz-appearance:textfield;}
 .sleep-time-in:focus{border-color:var(--accent);outline:none;}
 .sleep-dur{font-size:14px;font-weight:700;color:var(--accent);margin-left:auto;}
 .sleep-total{font-size:13px;font-weight:700;color:var(--fg2);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);text-align:right;}
-.sl-add-nap-btn{display:block;width:100%;margin-top:10px;background:none;border:1.5px dashed var(--border);border-radius:var(--r-s);padding:8px;font-size:13px;color:var(--fg2);cursor:pointer;text-align:center;font-family:inherit;}
+.sl-quick-btns{display:flex;gap:10px;margin-bottom:14px;}
+.sl-quick-btn{flex:1;padding:14px 8px;border:none;border-radius:var(--r-s);font-size:14px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:64px;transition:opacity .15s;}
+.sl-quick-btn:active{opacity:.65;}
+.sl-bed-btn{background:#dde1f9;color:#3730a3;}
+.sl-wake-btn{background:#fde8c8;color:#9a3412;}
+.sl-time-badge{font-size:11px;font-weight:600;opacity:.75;min-height:14px;}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .sl-bed-btn{background:#1E1B4B;color:#a5b4fc;}
+  :root:not([data-theme="light"]) .sl-wake-btn{background:#431407;color:#fdba74;}
+}
+:root[data-theme="dark"] .sl-bed-btn{background:#1E1B4B;color:#a5b4fc;}
+:root[data-theme="dark"] .sl-wake-btn{background:#431407;color:#fdba74;}
+.sl-add-nap-btn{display:block;width:100%;margin-top:10px;background:none;border:1.5px dashed var(--border);border-radius:var(--r-s);padding:13px;font-size:13px;color:var(--fg2);cursor:pointer;text-align:center;font-family:inherit;}
 .sl-add-nap-btn:hover{border-color:var(--accent);color:var(--accent);}
 .ml-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
 .ml-legend-item{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--fg2);}
@@ -412,7 +424,7 @@ input[type=number]{-moz-appearance:textfield;}
 .meal-add input:focus{outline:none;border-color:var(--accent);background:var(--surface);}
 .meal-add .kcal-in{flex:0 0 65px;}
 .meal-add .add-btn{background:var(--accent-bg);color:var(--accent-fg);border:none;
-  border-radius:6px;padding:7px 11px;font-size:13px;font-family:inherit;font-weight:700;cursor:pointer;}
+  border-radius:6px;padding:11px 14px;font-size:13px;font-family:inherit;font-weight:700;cursor:pointer;}
 .total-row{font-size:13px;color:var(--fg2);padding:6px 2px 2px;}
 .total-row strong{color:var(--fg);}
 .total-row-kcal{text-align:right;margin-bottom:4px;}
@@ -599,9 +611,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 /* Cal toolbar */
 .cal-toolbar{display:flex;align-items:center;justify-content:space-between;padding:0 4px;}
 .cal-view-row{display:flex;gap:4px;align-items:center;}
-.view-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface2);color:var(--fg2);font-size:.8rem;cursor:pointer;font-family:inherit;}
+.view-btn{padding:9px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface2);color:var(--fg2);font-size:.8rem;cursor:pointer;font-family:inherit;}
 .view-btn.on{background:var(--accent);color:#fff;border-color:var(--accent);}
-.today-btn{padding:5px 10px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--accent);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;margin-left:4px;}
+.today-btn{padding:9px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--accent);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;margin-left:4px;}
 .cal-search-row{padding:8px 4px 0;}
 #cal-search{width:100%;box-sizing:border-box;padding:9px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface2);font-size:.9rem;font-family:inherit;color:var(--fg);outline:none;}
 #cal-search:focus{border-color:var(--accent);}
@@ -653,8 +665,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
   border:3px solid transparent;transition:border-color .1s,transform .1s;}
 .cdot.on{border-color:var(--fg);transform:scale(1.18);}
 .m-actions{display:flex;gap:8px;margin-top:4px;}
-.m-actions button{flex:1;padding:12px;border-radius:var(--r-s);
-  font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;border:none;}
+.m-actions button{flex:1;padding:15px 12px;min-height:52px;border-radius:var(--r-s);
+  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;border:none;}
 .btn-cancel{background:var(--surface2);color:var(--fg2);}
 .btn-ok{background:var(--accent);color:#fff;}
 /* ── Passcode ── */
@@ -864,6 +876,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
       </div>
       <div class="card sleep-card">
         <div class="sleep-head">😴 睡眠記録</div>
+        <div class="sl-quick-btns">
+          <button id="sl-bed-now" class="sl-quick-btn sl-bed-btn">🌙 就寝<span id="sl-bed-badge" class="sl-time-badge"></span></button>
+          <button id="sl-wake-now" class="sl-quick-btn sl-wake-btn">☀️ 起床<span id="sl-wake-badge" class="sl-time-badge"></span></button>
+        </div>
         <div class="sleep-inputs">
           <div class="sleep-field"><span class="sleep-lbl">就寝</span><input type="time" id="sl-bedtime" class="sleep-time-in"></div>
           <div class="sleep-field"><span class="sleep-lbl">起床</span><input type="time" id="sl-waketime" class="sleep-time-in"></div>
@@ -958,7 +974,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 <button class="fab-float pos-br" id="fab-float" hidden>＋</button>
 
 <div class="overlay" id="mo-profiles" hidden>
-  <div class="modal">
+  <div class="modal" style="max-height:90vh;overflow-y:auto;">
     <h3>👤 プロフィール</h3>
     <div id="prof-list-items"></div>
     <div class="new-prof-form">
@@ -1059,9 +1075,30 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
   </div>
 </div>
 
+<!-- Review modal -->
+<div class="overlay" id="mo-review" hidden>
+  <div class="modal" style="max-height:90vh;overflow-y:auto;">
+    <h3>📋 振り返り</h3>
+    <div id="review-body" style="display:flex;flex-direction:column;gap:16px;margin:12px 0;"></div>
+    <div class="m-actions">
+      <button class="btn-cancel" id="review-skip">スキップ</button>
+      <button class="btn-ok" id="review-save">保存する</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEV toolbar (shown only in DEV mode) -->
+<div id="dev-toolbar" hidden style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#f97316;color:#fff;padding:6px 12px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+  <span>🔧 DEV</span>
+  <input type="date" id="dev-date-input" style="font-size:12px;padding:3px 6px;border:none;border-radius:4px;color:#333;">
+  <button id="dev-date-apply" style="font-size:11px;padding:3px 10px;border:none;border-radius:4px;background:#fff;color:#f97316;font-weight:700;cursor:pointer;">日付変更</button>
+  <button id="dev-date-reset" style="font-size:11px;padding:3px 10px;border:none;border-radius:4px;background:#fff;color:#f97316;font-weight:700;cursor:pointer;">今日に戻す</button>
+  <span id="dev-date-label" style="font-size:11px;opacity:.8;"></span>
+</div>
+
 <!-- Timer modal -->
 <div class="overlay" id="mo-timer" hidden>
-  <div class="modal" style="max-width:340px;">
+  <div class="modal" style="max-width:340px;max-height:90vh;overflow-y:auto;">
     <h3 style="margin-bottom:12px;">⏱ タイマー</h3>
     <div class="m-field">
       <label>種目名</label>
@@ -1094,7 +1131,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 
 <!-- Goal review modal -->
 <div class="overlay" id="mo-goal" hidden>
-  <div class="modal">
+  <div class="modal" style="max-height:90vh;overflow-y:auto;">
     <h3>振り返り</h3>
     <p id="mg-text" style="font-size:14px;color:var(--fg2);margin-bottom:16px;line-height:1.5;
       border-left:3px solid var(--accent);padding-left:10px;"></p>
@@ -1129,7 +1166,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 </div>
 
 <div class="overlay" id="mo-ml-add" hidden>
-  <div class="modal">
+  <div class="modal" style="max-height:90vh;overflow-y:auto;">
     <h3 id="mla-title">食事に追加</h3>
     <div class="m-field">
       <label>食品名</label>
@@ -1148,7 +1185,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 </div>
 
 <div class="overlay" id="mo-nutrients" hidden>
-  <div class="modal">
+  <div class="modal" style="max-height:90vh;overflow-y:auto;">
     <h3>栄養素の設定</h3>
     <p style="font-size:12px;color:var(--fg2);margin-bottom:12px;">カロリー以外に記録したい成分を追加できます。</p>
     <div id="nut-def-list" class="nut-def-list"></div>
@@ -1157,7 +1194,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
         style="flex:1;background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r-s);padding:9px 10px;font-size:13px;font-family:inherit;color:var(--fg);outline:none;">
       <input id="nut-unit-in" placeholder="単位"
         style="width:62px;background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r-s);padding:9px 8px;font-size:13px;font-family:inherit;color:var(--fg);outline:none;text-align:center;">
-      <button id="nut-add" style="background:var(--accent-bg);color:var(--accent-fg);border:none;border-radius:var(--r-s);padding:9px 12px;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;">追加</button>
+      <button id="nut-add" style="background:var(--accent-bg);color:var(--accent-fg);border:none;border-radius:var(--r-s);padding:12px 15px;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;">追加</button>
     </div>
     <div class="m-actions" style="margin-top:16px;">
       <button class="btn-ok" id="nut-close" style="width:100%;">閉じる</button>
@@ -1359,7 +1396,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
   <div class="modal" style="max-height:85vh;overflow-y:auto;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
       <h3 id="mo-day-ttl" style="margin:0;font-size:1.1rem;"></h3>
-      <button id="mo-day-close" style="background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--fg2);padding:4px 8px;">✕</button>
+      <button id="mo-day-close" style="background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--fg2);padding:10px 12px;">✕</button>
     </div>
     <div id="mo-day-list"></div>
     <button id="mo-day-add" class="btn-ok" style="width:100%;margin-top:16px;">＋ 予定を追加</button>
@@ -1367,7 +1404,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 </div>
 
 <div class="overlay" id="mo-calendars" hidden>
-  <div class="modal">
+  <div class="modal" style="max-height:90vh;overflow-y:auto;">
     <h3>カレンダーの管理</h3>
     <div id="cal-def-list" style="margin-bottom:16px;"></div>
     <div style="display:flex;gap:6px;align-items:center;margin-bottom:10px;">
@@ -1383,7 +1420,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
     <div style="display:flex;gap:6px;">
       <input id="new-cal-name" placeholder="カレンダー名"
         style="flex:1;background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r-s);padding:9px 12px;font-size:14px;font-family:inherit;color:var(--fg);outline:none;">
-      <button id="new-cal-add" style="background:var(--accent-bg);color:var(--accent-fg);border:none;border-radius:var(--r-s);padding:9px 14px;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;white-space:nowrap;">追加</button>
+      <button id="new-cal-add" style="background:var(--accent-bg);color:var(--accent-fg);border:none;border-radius:var(--r-s);padding:12px 16px;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;white-space:nowrap;">追加</button>
     </div>
     <div class="m-actions" style="margin-top:16px;">
       <button class="btn-ok" id="cal-manage-close" style="width:100%;">閉じる</button>
@@ -1391,7 +1428,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
   </div>
 </div>
 
-<script>
+<script>window._DEV_MODE=true;
 // ── Passcode ──────────────────────────────────────────────
 (function(){
   const PC_KEY='lh_passcode';
@@ -1591,6 +1628,8 @@ function getEventsForDate(dateStr){
 let db=load();
 const NOW=new Date();
 const TODAY=fmt(NOW);
+window._devDate=null;
+function todayStr(){return window._devDate||fmt(new Date());}
 
 if(!db||!db.events){
   db={events:[],tasks:[],workouts:{},meals:{},woPhotos:{},mlPhotos:{},evPhotos:{},taskPhotos:{},sleep:{}};
@@ -1975,7 +2014,7 @@ function renderGoals(){
   }
 
   const addRow=document.createElement('div');addRow.className='goal-add-row';
-  addRow.innerHTML=`<button id="goal-add" style="width:100%;padding:9px;font-size:13px;">＋ 目標を追加</button>`;
+  addRow.innerHTML=`<button id="goal-add" style="width:100%;padding:14px;font-size:13px;">＋ 目標を追加</button>`;
   body.appendChild(addRow);
   card.appendChild(body);
 
@@ -2476,6 +2515,8 @@ function evShowSug(){
     el.addEventListener('mousedown',pick);
     el.addEventListener('touchstart',pick,{passive:false});
   });
+  const r=inp.getBoundingClientRect();
+  sug.style.top=(r.bottom+2)+'px';sug.style.left=r.left+'px';sug.style.width=r.width+'px';
   sug.classList.add('show');
 }
 document.getElementById('ev-title').addEventListener('input',evShowSug);
@@ -2589,6 +2630,7 @@ const ANNOUNCEMENTS=[
     const allSeen=[...seen,...unseen.map(a=>a.id)];
     try{localStorage.setItem('lh_seen_anns',JSON.stringify(allSeen));}catch{}
     document.getElementById('mo-ann').hidden=true;
+    showReviewIfNeeded();
   };
   // パスコード後に表示するため少し遅延
   setTimeout(()=>{
@@ -2604,6 +2646,109 @@ const ANNOUNCEMENTS=[
     }
   },500);
 })();
+
+// お知らせがない場合も振り返りを表示
+setTimeout(()=>{
+  if(document.getElementById('mo-ann').hidden){showReviewIfNeeded();}
+},600);
+
+// ===== 振り返りモーダル =====
+function showReviewIfNeeded(){
+  const today=todayStr();
+  const dow=new Date(today+'T00:00:00').getDay();
+  const ydD=new Date(today+'T00:00:00');ydD.setDate(ydD.getDate()-1);
+  const yesterday=fmt(ydD);
+  const needsDaily=localStorage.getItem('lh_last_daily_review')!==today;
+  const needsWeekly=dow===0&&localStorage.getItem('lh_last_weekly_review')!==today;
+  const dailyTasks=(db.tasks||[]).filter(t=>t.repeat==='daily');
+  const weeklyTasks=(db.tasks||[]).filter(t=>t.repeat==='weekly');
+  if((!needsDaily||!dailyTasks.length)&&(!needsWeekly||!weeklyTasks.length)){
+    if(needsDaily)try{localStorage.setItem('lh_last_daily_review',today);}catch{}
+    return;
+  }
+  const body=document.getElementById('review-body');
+  body.innerHTML='';
+  const reviewData={};
+  if(needsDaily&&dailyTasks.length){
+    const sec=document.createElement('div');
+    sec.innerHTML=`<div style="font-size:13px;font-weight:700;color:var(--fg);margin-bottom:8px;">📅 昨日（${jpDate(yesterday)}）の記録</div>`;
+    dailyTasks.forEach(task=>{
+      const key=task.id+'_'+yesterday;reviewData[key]=null;
+      const row=document.createElement('div');
+      row.style.cssText='display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--border);';
+      row.innerHTML=`<span style="flex:1;font-size:14px;">${esc(task.title)}</span>
+        <button class="rv-btn rv-yes" data-key="${key}" style="padding:12px 16px;border-radius:var(--r-s);border:none;font-size:13px;font-weight:600;cursor:pointer;background:var(--surface2);color:var(--fg2);">達成</button>
+        <button class="rv-btn rv-no" data-key="${key}" style="padding:12px 16px;border-radius:var(--r-s);border:none;font-size:13px;font-weight:600;cursor:pointer;background:var(--surface2);color:var(--fg2);">未達成</button>`;
+      sec.appendChild(row);
+    });
+    body.appendChild(sec);
+  }
+  if(needsWeekly&&weeklyTasks.length){
+    const weD=new Date(yesterday+'T00:00:00');weD.setDate(weD.getDate()-6);
+    const weekStart=fmt(weD);
+    const sec=document.createElement('div');
+    sec.innerHTML=`<div style="font-size:13px;font-weight:700;color:var(--fg);margin-bottom:8px;">📅 今週（${jpDate(weekStart)}〜${jpDate(yesterday)}）の記録</div>`;
+    weeklyTasks.forEach(task=>{
+      const key=task.id+'_'+yesterday;reviewData[key]=null;
+      const row=document.createElement('div');
+      row.style.cssText='display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--border);';
+      row.innerHTML=`<span style="flex:1;font-size:14px;">${esc(task.title)}</span>
+        <button class="rv-btn rv-yes" data-key="${key}" style="padding:12px 16px;border-radius:var(--r-s);border:none;font-size:13px;font-weight:600;cursor:pointer;background:var(--surface2);color:var(--fg2);">達成</button>
+        <button class="rv-btn rv-no" data-key="${key}" style="padding:12px 16px;border-radius:var(--r-s);border:none;font-size:13px;font-weight:600;cursor:pointer;background:var(--surface2);color:var(--fg2);">未達成</button>`;
+      sec.appendChild(row);
+    });
+    body.appendChild(sec);
+  }
+  body.querySelectorAll('.rv-btn').forEach(btn=>{
+    btn.onclick=()=>{
+      const isYes=btn.classList.contains('rv-yes');
+      const key=btn.dataset.key;
+      reviewData[key]=isYes;
+      btn.closest('div').querySelectorAll('.rv-btn').forEach(b=>{b.style.background='var(--surface2)';b.style.color='var(--fg2)';});
+      btn.style.background=isYes?'var(--ok)':'#dc2626';btn.style.color='#fff';
+    };
+  });
+  const saveReview=()=>{
+    Object.entries(reviewData).forEach(([key,val])=>{
+      if(val===null)return;
+      const [tid,date]=key.split('_');
+      const task=(db.tasks||[]).find(t=>t.id===tid);if(!task)return;
+      if(!task.completedDates)task.completedDates=[];
+      const idx=task.completedDates.indexOf(date);
+      if(val&&idx<0)task.completedDates.push(date);
+      else if(!val&&idx>=0)task.completedDates.splice(idx,1);
+    });
+    save(db);
+    if(needsDaily)try{localStorage.setItem('lh_last_daily_review',today);}catch{}
+    if(needsWeekly)try{localStorage.setItem('lh_last_weekly_review',today);}catch{}
+    document.getElementById('mo-review').hidden=true;renderTasks();
+  };
+  document.getElementById('review-save').onclick=saveReview;
+  document.getElementById('review-skip').onclick=()=>{
+    if(needsDaily)try{localStorage.setItem('lh_last_daily_review',today);}catch{}
+    if(needsWeekly)try{localStorage.setItem('lh_last_weekly_review',today);}catch{}
+    document.getElementById('mo-review').hidden=true;
+  };
+  document.getElementById('mo-review').hidden=false;
+}
+
+// ===== DEVツールバー =====
+if(window._DEV_MODE){
+  const tb=document.getElementById('dev-toolbar');
+  tb.hidden=false;
+  // safe-topを下げてツールバー分ずらす
+  document.getElementById('app').style.setProperty('--safe-top','56px');
+  const inp=document.getElementById('dev-date-input');
+  inp.value=todayStr();
+  document.getElementById('dev-date-apply').onclick=()=>{
+    window._devDate=inp.value||null;
+    document.getElementById('dev-date-label').textContent='現在: '+(window._devDate||'今日');
+  };
+  document.getElementById('dev-date-reset').onclick=()=>{
+    window._devDate=null;inp.value=fmt(new Date());
+    document.getElementById('dev-date-label').textContent='今日に戻した';
+  };
+}
 const CHANGELOG=[
   {v:'v1.0',d:'初期リリース'},
 ];
@@ -2785,13 +2930,13 @@ function sortTasksBy(tasks,by){
 }
 function taskIsDoneToday(task){
   if(!task.repeat) return task.done;
-  return (task.completedDates||[]).includes(fmt(new Date()));
+  return (task.completedDates||[]).includes(todayStr());
 }
 function toggleTaskDone(id){
   const t=db.tasks.find(t=>t.id===id);if(!t)return;
   if(t.repeat){
     if(!t.completedDates)t.completedDates=[];
-    const today=fmt(new Date());
+    const today=todayStr();
     const idx=t.completedDates.indexOf(today);
     if(idx>=0)t.completedDates.splice(idx,1);
     else t.completedDates.push(today);
@@ -3276,6 +3421,8 @@ function exShowSug(){
     el.addEventListener('mousedown',pick);
     el.addEventListener('touchstart',pick,{passive:false});
   });
+  const r=inp.getBoundingClientRect();
+  sug.style.top=(r.bottom+2)+'px';sug.style.left=r.left+'px';sug.style.width=r.width+'px';
   sug.classList.add('show');
 }
 document.getElementById('ex-add').onclick=()=>{
@@ -3531,6 +3678,12 @@ function renderSleepTab(){
   document.getElementById('sl-waketime').value=sl.wakeTime||'';
   renderNaps();
   updateSlDur();
+  // クイックボタンのバッジ更新（今日の就寝・昨日からの起床）
+  const today=todayStr();
+  const ydD=new Date(today+'T00:00:00');ydD.setDate(ydD.getDate()-1);
+  const yd=fmt(ydD);
+  document.getElementById('sl-bed-badge').textContent=(db.sleep[today]||{}).bedtime||'';
+  document.getElementById('sl-wake-badge').textContent=(db.sleep[yd]||{}).wakeTime||'';
 }
 document.getElementById('sl-prev').onclick=()=>{const d=new Date(st.slDate);d.setDate(d.getDate()-1);st.slDate=fmt(d);renderSleepTab();};
 document.getElementById('sl-next').onclick=()=>{const d=new Date(st.slDate);d.setDate(d.getDate()+1);st.slDate=fmt(d);renderSleepTab();};
@@ -3544,6 +3697,24 @@ document.getElementById('sl-waketime').addEventListener('change',()=>{
   db.sleep[st.slDate].wakeTime=document.getElementById('sl-waketime').value;
   save(db);updateSlDur();
 });
+document.getElementById('sl-bed-now').onclick=()=>{
+  const now=new Date();
+  const t=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+  const today=todayStr();
+  if(!db.sleep[today])db.sleep[today]={};
+  db.sleep[today].bedtime=t;
+  save(db);st.slDate=today;renderSleepTab();
+};
+document.getElementById('sl-wake-now').onclick=()=>{
+  const now=new Date();
+  const t=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+  // 起床は昨夜の睡眠記録（昨日）に保存
+  const ydD=new Date(todayStr()+'T00:00:00');ydD.setDate(ydD.getDate()-1);
+  const yd=fmt(ydD);
+  if(!db.sleep[yd])db.sleep[yd]={};
+  db.sleep[yd].wakeTime=t;
+  save(db);st.slDate=yd;renderSleepTab();
+};
 document.getElementById('sl-add-nap').onclick=()=>{
   const ds=st.slDate;
   if(!db.sleep[ds])db.sleep[ds]={};
