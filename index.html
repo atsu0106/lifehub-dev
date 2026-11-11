@@ -608,6 +608,18 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 .ob-btn{padding:15px;border-radius:12px;background:var(--accent);color:#fff;font-size:1rem;font-weight:700;border:none;cursor:pointer;font-family:inherit;margin-top:4px;}
 .ob-btn:active{opacity:.85;}
 
+/* Clarify view */
+.clarify-nav{display:flex;align-items:center;justify-content:space-between;padding:0 4px 10px;}
+.clarify-date-big{text-align:center;flex:1;}
+.clarify-date-big .cdb-date{font-size:1.4rem;font-weight:800;color:var(--fg);line-height:1.2;}
+.clarify-date-big .cdb-dow{font-size:.85rem;color:var(--fg2);margin-top:2px;}
+.clarify-tasks-section{margin-top:10px;}
+.clarify-tasks-section .section-label{margin:0 0 8px;}
+.clarify-task-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--surface);border-radius:var(--r-s);margin-bottom:6px;}
+.clarify-task-check{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;transition:background .1s,border-color .1s;}
+.clarify-task-check.done{background:var(--accent);border-color:var(--accent);color:#fff;}
+.clarify-task-name{flex:1;font-size:.9rem;font-weight:500;color:var(--fg);}
+.clarify-task-name.done{text-decoration:line-through;color:var(--fg2);}
 /* Cal toolbar */
 .cal-toolbar{display:flex;align-items:center;justify-content:space-between;padding:0 4px;}
 .cal-view-row{display:flex;gap:4px;align-items:center;}
@@ -740,6 +752,16 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
 
   <section id="tab-cal" class="tab on">
     <div id="goal-card" class="goal-card"></div>
+    <div id="clarify-view" hidden>
+      <div class="clarify-nav">
+        <button class="arrow-btn" id="cl-prev">‹</button>
+        <div class="clarify-date-big">
+          <div class="cdb-date" id="cl-date-label"></div>
+          <div class="cdb-dow" id="cl-dow-label"></div>
+        </div>
+        <button class="arrow-btn" id="cl-next">›</button>
+      </div>
+    </div>
     <div class="cal-toolbar">
       <div class="month-nav">
         <button class="arrow-btn" id="prev-mo">‹</button>
@@ -761,6 +783,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
     <div id="search-results" hidden></div>
     <p class="section-label" id="day-lbl"></p>
     <div id="ev-list"></div>
+    <div id="clarify-tasks" class="clarify-tasks-section" hidden></div>
   </section>
 
   <section id="tab-tasks" class="tab">
@@ -1031,6 +1054,13 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
       </div>
     </div>
     <div class="m-field" style="margin-top:16px;">
+      <label>カレンダーレイアウト</label>
+      <div class="pos-opt-row">
+        <button class="pos-opt" data-cal="general"><span class="pos-opt-icon">📅</span>General</button>
+        <button class="pos-opt" data-cal="clarify"><span class="pos-opt-icon">✨</span>Clarify</button>
+      </div>
+    </div>
+    <div class="m-field" style="margin-top:16px;">
       <label>アクセス制限</label>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
         <div id="pc-status" style="font-size:13px;color:var(--fg2);padding:4px 0;"></div>
@@ -1060,7 +1090,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
     <div class="m-actions" style="margin-top:16px;">
       <button class="btn-ok" id="settings-close" style="width:100%;">閉じる</button>
     </div>
-    <p style="text-align:center;font-size:11px;color:var(--fg3);margin-top:12px;">LifeHub v1.0-dev</p>
+    <p style="text-align:center;font-size:11px;color:var(--fg3);margin-top:12px;">LifeHub v2.25-dev</p>
   </div>
 </div>
 
@@ -1657,8 +1687,9 @@ Object.values(db.workouts||{}).forEach(exs=>{
 // migrate repeating tasks: add completedDates array
 (db.tasks||[]).forEach(t=>{if(t.repeat&&!t.completedDates)t.completedDates=[];});
 if(!db.nutrients)db.nutrients=[];
-if(!db.settings)db.settings={addBtnPos:'center',highlightTab:'wo'};
+if(!db.settings)db.settings={addBtnPos:'center',highlightTab:'wo',calLayout:'general'};
 if(!db.settings.highlightTab)db.settings.highlightTab='wo';
+if(!db.settings.calLayout)db.settings.calLayout='general';
 if(!db.calendars||!db.calendars.length){
   db.calendars=[
     {id:uid(),name:'マイカレンダー',color:'#4F46E5'}
@@ -1680,7 +1711,7 @@ db.goals.forEach(g=>{
 const st={tab:'cal',calY:NOW.getFullYear(),calM:NOW.getMonth(),
   selDate:TODAY,woDate:TODAY,mlDate:TODAY,slDate:TODAY,
   filter:'all',evColor:'#4F46E5',hiddenCals:new Set(),addCalId:'',
-  calView:'month',otherSub:'meals',taskSort:'pri',goalTaskSort:'pri'};
+  calView:'month',calLayout:db.settings.calLayout||'general',otherSub:'meals',taskSort:'pri',goalTaskSort:'pri'};
 
 const DOW=['日','月','火','水','木','金','土'];
 document.getElementById('hdr-date').textContent=
@@ -2202,6 +2233,20 @@ function renderCalFilters(){
 }
 
 function renderCal(){
+  const isClarify=st.calLayout==='clarify';
+  document.getElementById('layout-clarify').classList.toggle('on',isClarify);
+  document.getElementById('clarify-view').hidden=!isClarify;
+  const searchRow=document.querySelector('.cal-search-row');
+  if(searchRow)searchRow.hidden=isClarify;
+  document.getElementById('cal-filter-row').hidden=isClarify;
+  document.getElementById('day-lbl').hidden=isClarify;
+  document.getElementById('clarify-tasks').hidden=!isClarify;
+  if(isClarify){
+    document.getElementById('cal-grid').hidden=true;
+    document.getElementById('week-view').hidden=true;
+    document.getElementById('search-results').hidden=true;
+    renderClarifyView();return;
+  }
   const{calY,calM,selDate}=st;
   document.getElementById('mo-label').textContent=`${calY}年${calM+1}月`;
   renderCalFilters();
@@ -2229,6 +2274,60 @@ function renderCal(){
   const rem=(first+dim)%7===0?0:7-(first+dim)%7;
   for(let d=1;d<=rem;d++)addDay(grid,d,'other',fmt(new Date(calY,calM+1,d)));
   renderDayEv();
+}
+function renderClarifyView(){
+  const ds=st.selDate;
+  const d=new Date(ds+'T00:00:00');
+  const m=d.getMonth()+1,day=d.getDate();
+  const dowStr=['日','月','火','水','木','金','土'][d.getDay()];
+  const isToday=ds===TODAY;
+  document.getElementById('cl-date-label').textContent=`${m}月${day}日${isToday?' (今日)':''}`;
+  document.getElementById('cl-dow-label').textContent=dowStr+'曜日';
+  renderDayEv();
+  renderClarifyTasks(ds);
+}
+function taskIsDoneOn(task,dateStr){
+  if(task.repeat==='none'||!task.repeat)return!!task.done;
+  return (task.completedDates||[]).includes(dateStr);
+}
+function toggleTaskDoneOn(id,dateStr){
+  const task=(db.tasks||[]).find(t=>t.id===id);if(!task)return;
+  if(task.repeat==='none'||!task.repeat){task.done=!task.done;}
+  else{
+    if(!task.completedDates)task.completedDates=[];
+    const idx=task.completedDates.indexOf(dateStr);
+    if(idx>=0)task.completedDates.splice(idx,1);
+    else task.completedDates.push(dateStr);
+  }
+  save(db);renderClarifyTasks(dateStr);
+}
+function renderClarifyTasks(dateStr){
+  const sec=document.getElementById('clarify-tasks');sec.innerHTML='';
+  const tasks=(db.tasks||[]).filter(t=>{
+    if(t.repeat==='daily')return true;
+    if(t.repeat==='weekly')return true;
+    if(t.due===dateStr)return true;
+    if(!t.repeat||t.repeat==='none'){
+      if(t.due===dateStr)return true;
+      if(!t.due&&!t.done)return true;
+    }
+    return false;
+  });
+  if(!tasks.length){
+    sec.innerHTML=`<div class="empty" style="padding:16px 0"><div class="empty-icon">✅</div><p>今日のタスクはありません</p></div>`;
+    return;
+  }
+  const lbl=document.createElement('p');lbl.className='section-label';lbl.textContent='タスク';sec.appendChild(lbl);
+  tasks.forEach(t=>{
+    const done=taskIsDoneOn(t,dateStr);
+    const row=document.createElement('div');row.className='clarify-task-row';
+    const chk=document.createElement('div');chk.className='clarify-task-check'+(done?' done':'');
+    chk.textContent=done?'✓':'';
+    chk.onclick=()=>toggleTaskDoneOn(t.id,dateStr);
+    const name=document.createElement('div');name.className='clarify-task-name'+(done?' done':'');
+    name.textContent=t.text+(t.repeat&&t.repeat!=='none'?` (${t.repeat==='daily'?'毎日':'毎週'})`:'');
+    row.appendChild(chk);row.appendChild(name);sec.appendChild(row);
+  });
 }
 function addDay(grid,num,cls,ds){
   const el=document.createElement('div');
@@ -2365,6 +2464,23 @@ function deleteEvInstance(ev,dateStr){
   }
   save(db);renderCal();
 }
+document.querySelectorAll('.pos-opt[data-cal]').forEach(btn=>{
+  btn.onclick=()=>{
+    db.settings.calLayout=btn.dataset.cal;
+    save(db);
+    st.calLayout=btn.dataset.cal;
+    document.querySelectorAll('.pos-opt[data-cal]').forEach(b=>b.classList.toggle('on',b.dataset.cal===btn.dataset.cal));
+    if(st.tab==='cal')renderCal();
+  };
+});
+document.getElementById('cl-prev').onclick=()=>{
+  const d=new Date(st.selDate+'T00:00:00');d.setDate(d.getDate()-1);
+  st.selDate=fmt(d);st.calY=d.getFullYear();st.calM=d.getMonth();renderCal();
+};
+document.getElementById('cl-next').onclick=()=>{
+  const d=new Date(st.selDate+'T00:00:00');d.setDate(d.getDate()+1);
+  st.selDate=fmt(d);st.calY=d.getFullYear();st.calM=d.getMonth();renderCal();
+};
 document.getElementById('today-btn').onclick=()=>{
   const n=new Date();st.calY=n.getFullYear();st.calM=n.getMonth();st.selDate=TODAY;renderCal();
 };
@@ -2589,6 +2705,7 @@ document.getElementById('hdr-settings').onclick=()=>{
   const s=db.settings;
   document.querySelectorAll('.pos-opt[data-pos]').forEach(b=>b.classList.toggle('on',b.dataset.pos===(s.addBtnPos||'center')));
   document.querySelectorAll('.pos-opt[data-hl]').forEach(b=>b.classList.toggle('on',b.dataset.hl===(s.highlightTab||'wo')));
+  document.querySelectorAll('.pos-opt[data-cal]').forEach(b=>b.classList.toggle('on',b.dataset.cal===(s.calLayout||'general')));
   document.getElementById('mo-settings').hidden=false;
 };
 document.querySelectorAll('.pos-opt[data-pos]').forEach(btn=>{
@@ -2612,6 +2729,7 @@ document.getElementById('mo-settings').onclick=e=>{if(e.target===e.currentTarget
 // ===== お知らせ =====
 // 新しいお知らせを追加するときは先頭に追加する（idは一意な文字列）
 const ANNOUNCEMENTS=[
+  {id:'ann_002',date:'2026-11-11',title:'アップデート v2.25.0',body:'① カレンダーに「Clarify」レイアウトを追加。日付・目標・予定・タスクだけをシンプルに表示できます。② 睡眠タブに就寝/起床のクイック記録ボタンを追加。③ iOS表示の崩れ・タップ位置のズレを修正。④ 全ボタンを押しやすいサイズに拡大。'},
   {id:'ann_001',date:'2026-11-10',title:'LifeHub 公開しました！',body:'いつでもどこでも使えるように、GitHubでの公開を開始しました。今後もアップデートを続けていきます。設定の「アップデート履歴」でいつでも変更内容を確認できます。'},
 ];
 (()=>{
